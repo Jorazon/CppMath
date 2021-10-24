@@ -1,9 +1,15 @@
+
 #include <algorithm>
 #include <stdexcept>
 
 #include "Matrix.hpp"
 #include "Vector.hpp"
 
+/**
+ * Constructor. Contents initialized to 0.
+ * \param p_w width
+ * \param p_h height
+ */
 Matrix::Matrix(int p_w, int p_h)
 {
 	std::vector<double> col(p_h);
@@ -12,14 +18,28 @@ Matrix::Matrix(int p_w, int p_h)
 	std::fill(array.begin(), array.end(), col);
 }
 
+/**
+ * Constructor. Contents defined.
+ * \param p_array contents
+ */
 Matrix::Matrix(std::vector<std::vector<double>> p_array)
 {
 	array = p_array;
 }
 
+/**
+ * Constructor. Contents copied.
+ * \param p_M matrix
+ */
 Matrix::Matrix(Matrix &p_M)
 {
-	array = p_M.array;
+	for (size_t m = 0; m < p_M.width(); m++)
+	{
+		for (size_t n = 0; n < p_M.height(); n++)
+		{
+			array[n][m] = p_M.array[m][n];
+		}
+	}
 }
 
 /**
