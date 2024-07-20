@@ -31,7 +31,7 @@ public:
 	static double cofactor(Matrix p_M, int p_i, int p_j);
 	static Matrix cofactor(Matrix p_M);
 	static Matrix adjoint(Matrix p_M);
-	 Matrix adjoint();
+	Matrix adjoint();
 	static Matrix inverse(Matrix p_M);
 	Matrix inverse();
 	static Matrix pow(Matrix p_M, int p_power);
