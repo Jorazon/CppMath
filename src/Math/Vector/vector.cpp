@@ -92,7 +92,7 @@ double Vector::distance(Vector p_Va, Vector p_Vb)
 {
 	//The distance between two point vectors is
 	//the square root of the dot product of their difference with itself
-	return std::sqrt(dot(p_Vb - p_Va, p_Vb - p_Va));
+	return (p_Vb - p_Va).lenght();
 }
 
 /**
