@@ -143,9 +143,10 @@ Matrix Matrix::operator-(Matrix p_M)
 Matrix Matrix::submatrix(Matrix p_M, int p_i, int p_j)
 {
 	if (p_i > p_M.height() || p_j > p_M.width())
+		throw std::invalid_argument("Index out of bounds");
 
-		if (p_M.width() < 2 && p_M.height() < 2)
-			return p_M;
+	if (p_M.width() < 2 && p_M.height() < 2)
+		return p_M;
 
 	Matrix submatrix(p_M.height() - 1, p_M.width() - 1);
 
